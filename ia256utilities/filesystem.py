@@ -28,6 +28,15 @@
 #  Software is furnished to do so, subject to the following conditions:
 #
 #
+#
+#  Permission is hereby granted, free of charge, to any person obtaining a
+#  copy of this software and associated documentation files (the "Software"),
+#  to deal in the Software without restriction, including without limitation
+#  the rights to use, copy, modify, merge, publish, distribute, sublicense,
+#  and/or sell copies of the Software, and to permit persons to whom the
+#  Software is furnished to do so, subject to the following conditions:
+#
+#
 import json
 import os
 
@@ -35,9 +44,6 @@ import os
 def load_json(path, default_dict=True):
     """
     Загружает json файл и возвращает его в виде словаря или списка
-    path -- путь к файлу
-    default_dict -- тип значения если, файл не открывается
-    return -- возвращет dict или list.
     """
     if os.path.exists(path) and os.path.isfile(path):
         with open(path, encoding="utf8") as file:
@@ -67,3 +73,21 @@ def save(data, path):
     with open(path, 'w', encoding="utf-8") as file:
         file.write(data)
     file.close()
+
+
+def save_binary(data, path):
+    if not os.path.isdir(os.path.dirname(path)):
+        os.makedirs(os.path.dirname(path))
+    with open(path, 'wb') as file:
+        file.write(data)
+    file.close()
+
+
+def load_binary(path):
+    if os.path.exists(path) and os.path.isfile(path):
+        with open(path, 'rb') as file:
+            data = file.read()
+        file.close()
+        return data
+    else:
+        return None
