@@ -24,5 +24,5 @@ $ pip install ia256utilities
 ***ia256utilities*** is licensed under The Unlicense, please see [LICENSE](https://github.com/IceArrow256/ia256utilities/blob/master/LICENSE) for details.
 
 ## Authors
-* IceArrow256 — main developer (icearrow256@gmail.com);
+* IceArrow256 - main developer (icearrow256@gmail.com);
 * NikaDark16 - support (nikadark16@gmail.com).
