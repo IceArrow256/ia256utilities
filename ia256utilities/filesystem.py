@@ -18,16 +18,15 @@ def load_json(path, default_dict=True):
             return []
 
 
-def save_json(data, path):
+def save_json(data, path, indent=None):
     """
     Saves dictionary or list as json file
     """
     if not os.path.isdir(os.path.dirname(path)):
         os.makedirs(os.path.dirname(path))
     with open(path, 'w', encoding="utf-8") as file:
-        file.write(json.dumps(data, ensure_ascii=False))
+        file.write(json.dumps(data, ensure_ascii=False, indent=indent))
     file.close()
-
 
 def save(data, path):
     """
